@@ -30,8 +30,8 @@ app.post("/tweets", (req, res) => {
     const username = req.headers.user
     let tweet;
 
-    if (req.body.tweet.length !== 0 && username !== 0) {
-        users.find((user) => {
+    if (req.body.tweet.length !== 0 && username.length !== 0) {
+        users.map((user) => {
             if (user.username === username) {
                 tweet = {
                     username,
